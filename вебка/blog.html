@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jumbotron Page with Theme Dropdown</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  
+  <style>
+    .jumbotron-custom {
+      padding: 4rem 2rem;
+      background-color: var(--bs-body-bg);
+      border-radius: 0.3rem;
+      color: var(--bs-body-color);
+    }
+
+    /* Dark theme customization */
+    body.dark-mode {
+      --bs-body-bg: #121212;
+      --bs-body-color: #f8f9fa;
+    }
+
+    /* Light theme customization */
+    body.light-mode {
+      --bs-body-bg: #f8f9fa;
+      --bs-body-color: #212529;
+    }
+
+    /* Auto theme based on user preference */
+    @media (prefers-color-scheme: dark) {
+      body.auto-mode {
+        --bs-body-bg: #121212;
+        --bs-body-color: #f8f9fa;
+      }
+    }
+    
+    @media (prefers-color-scheme: light) {
+      body.auto-mode {
+        --bs-body-bg: #f8f9fa;
+        --bs-body-color: #212529;
+      }
+    }
+  </style>
+</head>
+<body class="auto-mode">
+
+  <!-- Language Selector and Theme Switcher -->
+  <div class="container mt-3">
+    <div class="d-flex justify-content-between">
+      <div>
+        <button id="enBtn" class="btn btn-primary me-2">English</button>
+        <button id="frBtn" class="btn btn-secondary">Ukrainian</button>
+      </div>
+      <div class="dropdown">
+        <!-- Dropdown button for theme selection -->
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          <i id="themeIcon" class="bi bi-gear-fill"></i> Theme
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="themeDropdown">
+          <li><a class="dropdown-item" href="#" id="autoTheme">Auto <i class="bi bi-gear-fill"></i></a></li>
+          <li><a class="dropdown-item" href="#" id="lightTheme">Light <i class="bi bi-brightness-low-fill"></i></a></li>
+          <li><a class="dropdown-item" href="#" id="darkTheme">Dark <i class="bi bi-moon-fill"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- English Jumbotron -->
+  <div id="enContent" class="container mt-4">
+    <div class="jumbotron-custom text-center">
+      <h1 class="display-4">Welcome to My Blog</h1>
+      <p class="lead">This is a simple jumbotron-style component for calling extra attention to featured content.</p>
+      <hr class="my-4">
+      <p>Here is a link to my shop site</p>
+      <a class="btn btn-primary btn-lg" href="https://alexander5806.github.io/TeaTime2/" role="button">TeaTime</a>
+      <p>(demo)</p>
+    </div>
+  </div>
+
+  <!-- French Jumbotron -->
+  <div id="frContent" class="container mt-4 d-none">
+    <div class="jumbotron-custom text-center">
+      <h1 class="display-4">Ласкаво просимо до мого блогуг</h1>
+      <p class="lead">Це стилі jumbotron для привернення додаткової уваги до рекомендованого вмісту.</p>
+      <hr class="my-4">
+      <p>Тут посилання на мій сайт магазин</p>
+      <a class="btn btn-primary btn-lg" href="https://alexander5806.github.io/TeaTime2/" role="button">TeaTime</a>
+      <p>(демо)</p>
+  </div>
+</div>
+  <div class="mt-3 text-center">
+    <a href="https://www.linkedin.com/in/%D0%BE%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80-%D0%B2%D0%B0%D1%81%D0%B8%D0%BB%D0%B5%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D0%B9-8901b0320/" target="_blank" class="btn btn-info me-2">
+      <i class="bi bi-linkedin"></i> LinkedIn
+    </a>
+    <a href="https://www.youtube.com/@h.s.a6764" target="_blank" class="btn btn-danger">
+      <i class="bi bi-youtube"></i> YouTube
+    </a>
+  </div>
+
+
+  <script>
+    const enBtn = document.getElementById('enBtn');
+    const frBtn = document.getElementById('frBtn');
+    const enContent = document.getElementById('enContent');
+    const frContent = document.getElementById('frContent');
+    const themeIcon = document.getElementById('themeIcon');
+    const body = document.body;
+
+    const autoTheme = document.getElementById('autoTheme');
+    const lightTheme = document.getElementById('lightTheme');
+    const darkTheme = document.getElementById('darkTheme');
+
+    enBtn.addEventListener('click', () => {
+      enContent.classList.remove('d-none');
+      frContent.classList.add('d-none');
+      enBtn.classList.add('btn-primary');
+      enBtn.classList.remove('btn-secondary');
+      frBtn.classList.remove('btn-primary');
+      frBtn.classList.add('btn-secondary');
+    });
+
+    frBtn.addEventListener('click', () => {
+      frContent.classList.remove('d-none');
+      enContent.classList.add('d-none');
+      frBtn.classList.add('btn-primary');
+      frBtn.classList.remove('btn-secondary');
+      enBtn.classList.remove('btn-primary');
+      enBtn.classList.add('btn-secondary');
+    });
+
+    // Theme switcher using dropdown
+    autoTheme.addEventListener('click', () => {
+      body.classList.remove('light-mode', 'dark-mode');
+      body.classList.add('auto-mode');
+      themeIcon.className = 'bi bi-gear-fill';
+    });
+
+    lightTheme.addEventListener('click', () => {
+      body.classList.remove('dark-mode', 'auto-mode');
+      body.classList.add('light-mode');
+      themeIcon.className = 'bi bi-brightness-low-fill';
+    });
+
+    darkTheme.addEventListener('click', () => {
+      body.classList.remove('light-mode', 'auto-mode');
+      body.classList.add('dark-mode');
+      themeIcon.className = 'bi bi-moon-fill';
+    });
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
