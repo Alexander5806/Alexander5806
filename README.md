@@ -3,6 +3,7 @@ I am oleksandr
 
 ## :mailbox: Reach me out!
 [![Linkedin Badge](https://img.shields.io/badge/-Vasylevskyi_Oleksandr-0e76a8?style=flat&labelColor=0e76a8&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/%D0%BE%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80-%D0%B2%D0%B0%D1%81%D0%B8%D0%BB%D0%B5%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D0%B9-8901b0320/) 
+[![Gmail](https://img.shields.io/badge/Gmail-Vasylevskyi_Oleksandr-D14836?logo=gmail&logoColor=white)](mailto:YOUR-EMAIL@GMAIL.COM)
 <!-- 
 youtube:
 [![YouTube](https://img.shields.io/badge/YouTube-Channel-FF0000?logo=youtube&logoColor=white)](https://www.youtube.com/c/YOUR-YOUTUBE-CHANNEL)
@@ -42,10 +43,10 @@ and more: https://shields.io/badges
 <br/>
 
 ### CV
-- :paperclip: [My CV](https://drive.google.com/file/d//view?usp=sharing)
+- :paperclip: [My CV]()
 
 ### My portfolio
-- :link: [Click](https://myportfoli-site.com)
+- :link: [Click]()
 
 
 
