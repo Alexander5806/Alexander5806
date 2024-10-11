@@ -45,8 +45,8 @@ and more: https://shields.io/badges
 ### CV
 - :paperclip: [My CV]()
 
-### My portfolio
-- :link: [Click](https://alexander5806.github.io/Alexander5806/)
+### Portfolio
+- :link: [Link](https://alexander5806.github.io/Alexander5806/)
 
 
 
